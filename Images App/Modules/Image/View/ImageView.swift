@@ -14,6 +14,8 @@ class ImageView: UIView {
     
     @IBOutlet weak var contentView: UIView!
     
+
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.initSubview()
@@ -27,7 +29,8 @@ class ImageView: UIView {
     func initSubview() {
         self.initXib()
         self.addSubview(self.contentView)
-        self.titleLabel.text = "PHOTOS"
+        self.titleLabel.text = "Fotos"
+
         self.setupCollection()
     }
     
@@ -52,6 +55,6 @@ extension ImageView: UICollectionViewDelegate, UICollectionViewDataSource, UICol
         
         return UICollectionViewCell()
     }
-    
-    
 }
+
+
