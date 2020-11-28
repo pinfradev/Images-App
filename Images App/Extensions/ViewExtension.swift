@@ -26,4 +26,9 @@ extension UIView {
             self.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
         ])
     }
+    
+    func roundView(cornerRadius: CGFloat) {
+        self.clipsToBounds = true
+        self.layer.cornerRadius = cornerRadius
+    }
 }

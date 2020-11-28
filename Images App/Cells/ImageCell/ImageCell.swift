@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class ImageCell: UICollectionViewCell {
     
@@ -14,7 +15,11 @@ class ImageCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        self.roundView(cornerRadius: 15.0)
     }
 
+    func setImage(urlString: String) {
+        let url = URL(string: urlString)
+        imageView.kf.setImage(with: url)
+    }
 }

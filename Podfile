@@ -8,4 +8,6 @@ target 'Images App' do
   # Pods for Images App
 # Networking
   pod 'Alamofire', '~> 5.2.2'
+# Images cache
+  pod 'Kingfisher', '~> 5.15.6'
 end

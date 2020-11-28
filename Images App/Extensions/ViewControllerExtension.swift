@@ -23,4 +23,11 @@ extension UIViewController {
             self.view.addSubview(view)
         }
     }
+    
+    func showAlert(message: String) {
+        let alertController = UIAlertController(title: "", message: message, preferredStyle: .alert)
+        let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alertController.addAction(action)
+        self.present(alertController, animated: true, completion: nil)
+    }
 }

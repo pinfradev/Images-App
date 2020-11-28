@@ -24,7 +24,9 @@ class APIBasis<T: RequestType> {
                    parameters: parameters,
                    encoding: URLEncoding.default,
                    headers: headers).responseJSON { (response) in
-                        
+                        self.sendRequestResult(requestType: requestType,
+                        response: response,
+                        completion: completion)
                    }
     }
     
