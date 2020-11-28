@@ -17,6 +17,7 @@
 		AB5668D92572E1BF00FD1C54 /* ImageAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5668D82572E1BF00FD1C54 /* ImageAPI.swift */; };
 		AB5668DC2572E70200FD1C54 /* ImagePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5668DB2572E70200FD1C54 /* ImagePresenter.swift */; };
 		AB5668DF2572E75400FD1C54 /* ImageProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5668DE2572E75400FD1C54 /* ImageProtocols.swift */; };
+		AB5668E8257303D400FD1C54 /* VerticalPaginationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5668E7257303D400FD1C54 /* VerticalPaginationManager.swift */; };
 		ABF9416825726D8600C99E8A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF9416725726D8600C99E8A /* AppDelegate.swift */; };
 		ABF9416A25726D8600C99E8A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF9416925726D8600C99E8A /* SceneDelegate.swift */; };
 		ABF9416C25726D8600C99E8A /* CustomTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF9416B25726D8600C99E8A /* CustomTabController.swift */; };
@@ -58,6 +59,7 @@
 		AB5668D82572E1BF00FD1C54 /* ImageAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAPI.swift; sourceTree = "<group>"; };
 		AB5668DB2572E70200FD1C54 /* ImagePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePresenter.swift; sourceTree = "<group>"; };
 		AB5668DE2572E75400FD1C54 /* ImageProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageProtocols.swift; sourceTree = "<group>"; };
+		AB5668E7257303D400FD1C54 /* VerticalPaginationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalPaginationManager.swift; sourceTree = "<group>"; };
 		ABF9416425726D8600C99E8A /* Images App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Images App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABF9416725726D8600C99E8A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ABF9416925726D8600C99E8A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -146,6 +148,14 @@
 			path = Image;
 			sourceTree = "<group>";
 		};
+		AB5668E6257303BF00FD1C54 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				AB5668E7257303D400FD1C54 /* VerticalPaginationManager.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		ABF9415B25726D8600C99E8A = {
 			isa = PBXGroup;
 			children = (
@@ -167,6 +177,7 @@
 		ABF9416625726D8600C99E8A /* Images App */ = {
 			isa = PBXGroup;
 			children = (
+				AB5668E6257303BF00FD1C54 /* Helper */,
 				AB5668C42572D25000FD1C54 /* Networking */,
 				ABF942602572BCF000C99E8A /* Cells */,
 				ABF942512572B04000C99E8A /* Model */,
@@ -437,6 +448,7 @@
 				ABF9416C25726D8600C99E8A /* CustomTabController.swift in Sources */,
 				AB5668DF2572E75400FD1C54 /* ImageProtocols.swift in Sources */,
 				AB5668DC2572E70200FD1C54 /* ImagePresenter.swift in Sources */,
+				AB5668E8257303D400FD1C54 /* VerticalPaginationManager.swift in Sources */,
 				ABF9416825726D8600C99E8A /* AppDelegate.swift in Sources */,
 				AB5668D22572DE4800FD1C54 /* ImageNetworking.swift in Sources */,
 				ABF942572572B66A00C99E8A /* UserModel.swift in Sources */,
