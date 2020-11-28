@@ -21,7 +21,7 @@ class VCFactory: NSObject {
         
         switch vc {
             case .images:
-                let viewCtrl = self.instantiateVC(id: "\(ImagesViewController.self)")
+                let viewCtrl = self.instantiateVC(id: "\(ImageViewController.self)")
                 let nav = CustomNavigationController(rootViewController: viewCtrl)
                 viewController = nav
             case .favorites:

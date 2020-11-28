@@ -7,9 +7,9 @@
 
 import UIKit
 
-class ImagesViewController: UIViewController {
+class ImageViewController: UIViewController {
 
-    var imagesChildView = ImagesView()
+    var imagesChildView = ImageView()
     
     override func viewDidLoad() {
         super.viewDidLoad()

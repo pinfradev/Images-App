@@ -24,10 +24,10 @@
             </objects>
             <point key="canvasLocation" x="139" y="94"/>
         </scene>
-        <!--Images View Controller-->
+        <!--Image View Controller-->
         <scene sceneID="i7a-H1-nFZ">
             <objects>
-                <viewController storyboardIdentifier="ImagesViewController" id="fta-pk-FeS" customClass="ImagesViewController" customModule="Images_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ImageViewController" id="fta-pk-FeS" customClass="ImageViewController" customModule="Images_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ewD-hY-cXu">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

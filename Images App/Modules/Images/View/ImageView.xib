@@ -14,7 +14,7 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ImagesView" customModule="Images_App" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ImageView" customModule="Images_App" customModuleProvider="target">
             <connections>
                 <outlet property="collectionView" destination="QcX-CL-TXN" id="3J7-C8-gch"/>
                 <outlet property="contentView" destination="iN0-l3-epB" id="h2Y-eO-sqg"/>
