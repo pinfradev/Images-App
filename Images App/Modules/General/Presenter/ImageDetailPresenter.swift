@@ -17,8 +17,18 @@ class StorePresenter {
 }
 
 extension StorePresenter: StorePresenterProtocol {
-    
-    
+    func verifyFavoriteImage(imageId: String) -> Bool {
+        var result = false
+        GetImageService.getImages(successBlock: { (photos) in
+            result = photos.contains { photo in
+                photo.id == imageId
+            }
+        }, errorBlock: { error in
+            result = false
+        })
+        return result
+    }
+
     func saveNewImage(dict: [String : Any]) {
         StoreService.saveNewImage(dict: dict, successBlock: {[weak self] message in
             self?.view?.saveImageSucceded(message: message)

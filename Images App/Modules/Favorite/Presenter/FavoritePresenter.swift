@@ -21,7 +21,7 @@ class FavoritePresenter {
     }
         
     func getFavorites() {
-        getImageService.getImages(successBlock: { [weak self] (favorites) in
+        GetImageService.getImages(successBlock: { [weak self] (favorites) in
             self?.view?.getFavoriteSuccess(favorites: favorites)
         }, errorBlock: {[weak self] error in
             self?.view?.getFavoriteFailed(error: error)

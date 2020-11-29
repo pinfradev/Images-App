@@ -25,6 +25,7 @@ class FavoriteViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        self.navigationController?.navigationBar.isHidden = true
         self.imageChildView.imagesToShow.removeAll()
         self.imageChildView.everyImage.removeAll()
         self.imageChildView.activityIndicator.startAnimating()

@@ -61,6 +61,10 @@ class ImageDetailViewController: UIViewController {
         }
     }
     
+    func validateFavorite() {
+        
+    }
+    
     @objc func eliminateFavorite() {
         if let photo = self.currentPhoto {
             self.presenter?.deleteFavorite(image: photo)

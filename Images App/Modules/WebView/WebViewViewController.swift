@@ -15,7 +15,9 @@ class WebViewViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setNavBar(icon: #imageLiteral(resourceName: "backIcon"), buttonType: .left, target: self, action: #selector(self.goBack))
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.setNavBar(icon: UIImage(named: Images.backIcon)?.withRenderingMode(.alwaysOriginal), buttonType: .left, target: self, action: #selector(self.goBack),Color: .black)
         self.loadWebSite()
     }
     

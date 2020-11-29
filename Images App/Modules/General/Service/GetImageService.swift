@@ -8,7 +8,7 @@
 import Foundation
 import Firebase
 
-class getImageService {
+class GetImageService {
     
     class func getImages(successBlock: @escaping (_ vehicles: [PhotoModel]) -> (), errorBlock: @escaping (_ error: String) -> ()) {
         let db = Firestore.firestore()
@@ -34,11 +34,7 @@ class getImageService {
             }
             
             successBlock(photosArray)
-            
-            
         }
-        
-        
     }
     
     

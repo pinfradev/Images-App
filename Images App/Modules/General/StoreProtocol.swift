@@ -25,4 +25,6 @@ protocol StorePresenterProtocol {
     func saveNewImage(dict: [String: Any])
     
     func deleteFavorite(image: PhotoModel)
+    
+    func verifyFavoriteImage(imageId: String) -> Bool
 }

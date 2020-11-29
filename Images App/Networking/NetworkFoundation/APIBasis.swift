@@ -61,7 +61,15 @@ class APIBasis<T: RequestType> {
                 completion(.failure(error))
             }
         default:
-            let message = "Error de request"
+            var message = "Error de request"
+            let _ = ErrorHandler.errorCode.contains { (key, value) in
+                if key == "\(statusCode)" {
+                    message = value
+                    return true
+                } else {
+                    return false
+                }
+            }
             let error = NSError(domain: requestType.basicUrl, code: statusCode, userInfo: [NSLocalizedDescriptionKey: message])
             completion(.failure(error))
         }
