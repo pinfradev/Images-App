@@ -141,8 +141,8 @@ extension VerticalPaginationManager {
            let contentHeight = self.scrollView.contentSize.height
            let frameHeight = self.scrollView.bounds.size.height
            let diffY = contentHeight - frameHeight
-//           if contentHeight > frameHeight,
-           if  offsetY > (diffY + 130) && !self.isLoading {
+           if contentHeight > frameHeight,
+            offsetY > (diffY + 130) && !self.isLoading {
             self.scrollView.isScrollEnabled = false
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
                 self.scrollView.isScrollEnabled = true

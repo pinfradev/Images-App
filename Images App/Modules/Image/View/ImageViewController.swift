@@ -66,6 +66,7 @@ extension ImageViewController: VerticalPaginationManagerDelegate {
     }
     
     func loadMore(completion: @escaping (Bool) -> Void) {
+        print("########loadmore")
         self.imageChildView.activityIndicator.startAnimating()
         self.presenter?.getImages(pag: self.currentPage)
         completion(true)

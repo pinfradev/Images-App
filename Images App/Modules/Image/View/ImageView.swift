@@ -104,15 +104,20 @@ extension ImageView: UICollectionViewDelegate, UICollectionViewDataSource, UICol
 
 extension ImageView: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        self.filetedImages = everyImage.filter { photo in
-            if let name = photo.user?.name, name.contains(searchText) {
-               return true
-            } else {
-                return false
+        if searchText.isEmpty {
+            self.imagesToShow = self.everyImage
+        } else {
+            self.filetedImages = everyImage.filter { photo in
+                if let name = photo.user?.name, name.contains(searchText) {
+                   return true
+                } else {
+                    return false
+                }
             }
+            
+            self.imagesToShow = filetedImages
         }
         
-        self.imagesToShow = filetedImages
         self.collectionView.reloadData()
     }
     

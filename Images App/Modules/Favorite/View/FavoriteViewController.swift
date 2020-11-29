@@ -26,6 +26,7 @@ class FavoriteViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.imageChildView.imagesToShow.removeAll()
+        self.imageChildView.everyImage.removeAll()
         self.imageChildView.activityIndicator.startAnimating()
         self.presenter?.getFavorites()
     }
