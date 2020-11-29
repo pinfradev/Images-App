@@ -13,6 +13,7 @@
 		AB4C51202573C17C001A296C /* ImageDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4C511F2573C17C001A296C /* ImageDetailView.swift */; };
 		AB4C51232573C2F2001A296C /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AB4C51222573C2F2001A296C /* Montserrat-SemiBold.ttf */; };
 		AB51C3D22573F015005EC316 /* WebViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB51C3D12573F015005EC316 /* WebViewViewController.swift */; };
+		AB51C3D52573F455005EC316 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AB51C3D42573F455005EC316 /* GoogleService-Info.plist */; };
 		AB5668BE2572D06600FD1C54 /* CollectionViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5668BD2572D06600FD1C54 /* CollectionViewExtension.swift */; };
 		AB5668C62572D28C00FD1C54 /* APIBasis.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5668C52572D28C00FD1C54 /* APIBasis.swift */; };
 		AB5668CA2572D2DA00FD1C54 /* RequestType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5668C92572D2DA00FD1C54 /* RequestType.swift */; };
@@ -60,6 +61,7 @@
 		AB4C511F2573C17C001A296C /* ImageDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailView.swift; sourceTree = "<group>"; };
 		AB4C51222573C2F2001A296C /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
 		AB51C3D12573F015005EC316 /* WebViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewViewController.swift; sourceTree = "<group>"; };
+		AB51C3D42573F455005EC316 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AB5668BD2572D06600FD1C54 /* CollectionViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewExtension.swift; sourceTree = "<group>"; };
 		AB5668C52572D28C00FD1C54 /* APIBasis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIBasis.swift; sourceTree = "<group>"; };
 		AB5668C92572D2DA00FD1C54 /* RequestType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestType.swift; sourceTree = "<group>"; };
@@ -218,6 +220,7 @@
 				ABF9416B25726D8600C99E8A /* CustomTabController.swift */,
 				ABF9416D25726D8600C99E8A /* Main.storyboard */,
 				ABF9417025726D8600C99E8A /* Assets.xcassets */,
+				AB51C3D42573F455005EC316 /* GoogleService-Info.plist */,
 				ABF9417225726D8600C99E8A /* LaunchScreen.storyboard */,
 				ABF9417525726D8600C99E8A /* Info.plist */,
 				ABF9417E2572736900C99E8A /* Colors.xcassets */,
@@ -420,6 +423,7 @@
 				ABF9417125726D8600C99E8A /* Assets.xcassets in Resources */,
 				ABF941942572749C00C99E8A /* Montserrat-Medium.ttf in Resources */,
 				ABF9416F25726D8600C99E8A /* Main.storyboard in Resources */,
+				AB51C3D52573F455005EC316 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
