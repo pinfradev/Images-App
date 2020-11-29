@@ -12,6 +12,7 @@ class VCFactory: NSObject {
     
     enum AppVC: Int {
         case images
+        case imageDetail
         case favorites
     }
     
@@ -24,6 +25,9 @@ class VCFactory: NSObject {
                 let viewCtrl = self.instantiateVC(id: "\(ImageViewController.self)")
                 let nav = CustomNavigationController(rootViewController: viewCtrl)
                 viewController = nav
+        case .imageDetail:
+                let viewCtrl = self.instantiateVC(id: "\(ImageDetailViewController.self)")
+                viewController = viewCtrl
             case .favorites:
                 break
         }

@@ -12,6 +12,7 @@ struct PhotoModel: Codable {
     var urls: UrlModel?
     var likes: Int?
     var user: UserModel?
+    var description: String?
 }
 
 struct UrlModel: Codable {

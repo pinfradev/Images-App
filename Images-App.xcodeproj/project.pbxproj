@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		A1380E21E69928E2647E0618 /* Pods_Images_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D4C713301262D139A5AFF1C /* Pods_Images_App.framework */; };
+		AB4C51182573BFC3001A296C /* ImageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4C51172573BFC3001A296C /* ImageDetailViewController.swift */; };
+		AB4C511D2573C167001A296C /* ImageDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB4C511C2573C167001A296C /* ImageDetailView.xib */; };
+		AB4C51202573C17C001A296C /* ImageDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4C511F2573C17C001A296C /* ImageDetailView.swift */; };
+		AB4C51232573C2F2001A296C /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AB4C51222573C2F2001A296C /* Montserrat-SemiBold.ttf */; };
 		AB5668BE2572D06600FD1C54 /* CollectionViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5668BD2572D06600FD1C54 /* CollectionViewExtension.swift */; };
 		AB5668C62572D28C00FD1C54 /* APIBasis.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5668C52572D28C00FD1C54 /* APIBasis.swift */; };
 		AB5668CA2572D2DA00FD1C54 /* RequestType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5668C92572D2DA00FD1C54 /* RequestType.swift */; };
@@ -50,6 +54,10 @@
 		021B97945DF83469CC8C2397 /* Pods-Images App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Images App.release.xcconfig"; path = "Target Support Files/Pods-Images App/Pods-Images App.release.xcconfig"; sourceTree = "<group>"; };
 		3D4C713301262D139A5AFF1C /* Pods_Images_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Images_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7110B50DD97F24985EC65873 /* Pods-Images App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Images App.debug.xcconfig"; path = "Target Support Files/Pods-Images App/Pods-Images App.debug.xcconfig"; sourceTree = "<group>"; };
+		AB4C51172573BFC3001A296C /* ImageDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailViewController.swift; sourceTree = "<group>"; };
+		AB4C511C2573C167001A296C /* ImageDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageDetailView.xib; sourceTree = "<group>"; };
+		AB4C511F2573C17C001A296C /* ImageDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailView.swift; sourceTree = "<group>"; };
+		AB4C51222573C2F2001A296C /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
 		AB5668BD2572D06600FD1C54 /* CollectionViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewExtension.swift; sourceTree = "<group>"; };
 		AB5668C52572D28C00FD1C54 /* APIBasis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIBasis.swift; sourceTree = "<group>"; };
 		AB5668C92572D2DA00FD1C54 /* RequestType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestType.swift; sourceTree = "<group>"; };
@@ -117,6 +125,16 @@
 				3D4C713301262D139A5AFF1C /* Pods_Images_App.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AB4C511A2573BFFF001A296C /* ImageDetail */ = {
+			isa = PBXGroup;
+			children = (
+				AB4C51172573BFC3001A296C /* ImageDetailViewController.swift */,
+				AB4C511C2573C167001A296C /* ImageDetailView.xib */,
+				AB4C511F2573C17C001A296C /* ImageDetailView.swift */,
+			);
+			path = ImageDetail;
 			sourceTree = "<group>";
 		};
 		AB5668C42572D25000FD1C54 /* Networking */ = {
@@ -219,6 +237,7 @@
 		ABF941832572740A00C99E8A /* Monserrat */ = {
 			isa = PBXGroup;
 			children = (
+				AB4C51222573C2F2001A296C /* Montserrat-SemiBold.ttf */,
 				ABF941872572745300C99E8A /* Montserrat-Bold.ttf */,
 				ABF941842572743E00C99E8A /* Montserrat-Black.ttf */,
 				ABF941892572746000C99E8A /* Montserrat-Light.ttf */,
@@ -231,6 +250,7 @@
 		ABF942072572782F00C99E8A /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				AB4C511A2573BFFF001A296C /* ImageDetail */,
 				ABF942362572961100C99E8A /* Image */,
 			);
 			path = Modules;
@@ -378,9 +398,11 @@
 			files = (
 				ABF941922572749900C99E8A /* Montserrat-Regular.ttf in Resources */,
 				ABF941902572749700C99E8A /* Montserrat-Light.ttf in Resources */,
+				AB4C51232573C2F2001A296C /* Montserrat-SemiBold.ttf in Resources */,
 				ABF9417425726D8600C99E8A /* LaunchScreen.storyboard in Resources */,
 				ABF942652572BD1D00C99E8A /* ImageCell.xib in Resources */,
 				ABF9418C2572749000C99E8A /* Montserrat-Black.ttf in Resources */,
+				AB4C511D2573C167001A296C /* ImageDetailView.xib in Resources */,
 				ABF9423F2572983100C99E8A /* ImageView.xib in Resources */,
 				ABF9418E2572749400C99E8A /* Montserrat-Bold.ttf in Resources */,
 				ABF9417F2572736900C99E8A /* Colors.xcassets in Resources */,
@@ -447,6 +469,7 @@
 				ABF942642572BD1D00C99E8A /* ImageCell.swift in Sources */,
 				ABF9416C25726D8600C99E8A /* CustomTabController.swift in Sources */,
 				AB5668DF2572E75400FD1C54 /* ImageProtocols.swift in Sources */,
+				AB4C51202573C17C001A296C /* ImageDetailView.swift in Sources */,
 				AB5668DC2572E70200FD1C54 /* ImagePresenter.swift in Sources */,
 				AB5668E8257303D400FD1C54 /* VerticalPaginationManager.swift in Sources */,
 				ABF9416825726D8600C99E8A /* AppDelegate.swift in Sources */,
@@ -461,6 +484,7 @@
 				ABF9422E25728D0A00C99E8A /* AppManager.swift in Sources */,
 				AB5668BE2572D06600FD1C54 /* CollectionViewExtension.swift in Sources */,
 				ABF9425A2572BA8700C99E8A /* ImageService.swift in Sources */,
+				AB4C51182573BFC3001A296C /* ImageDetailViewController.swift in Sources */,
 				ABF9424625729DB000C99E8A /* ViewControllerExtension.swift in Sources */,
 				ABF9423125728DC000C99E8A /* VCFactory.swift in Sources */,
 				AB5668CA2572D2DA00FD1C54 /* RequestType.swift in Sources */,

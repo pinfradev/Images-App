@@ -7,15 +7,21 @@
 
 import UIKit
 
+protocol ImageSelectionDelegate {
+    func imageSelected(photo: PhotoModel)
+}
+
 class ImageView: UIView {
     @IBOutlet weak var collectionView: UICollectionView!
     
     @IBOutlet weak var titleLabel: UILabel!
     
     @IBOutlet weak var contentView: UIView!
+
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     var imagesToShow = [PhotoModel]()
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    var delegate: ImageSelectionDelegate?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -66,7 +72,14 @@ extension ImageView: UICollectionViewDelegate, UICollectionViewDataSource, UICol
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 150.0, height: 150.0)
+        return CGSize(width: 100.0, height: 100.0)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if indexPath.row < self.imagesToShow.count{
+            let photo = self.imagesToShow[indexPath.row]
+            delegate?.imageSelected(photo: photo)
+        }
     }
 }
 

@@ -19,6 +19,7 @@ class ImageViewController: UIViewController {
         super.viewDidLoad()
         self.navigationController?.navigationBar.isHidden = true
         self.addChildView(view: imageChildView)
+        self.imageChildView.delegate = self
         self.presenter = ImagePresenter(view: self)
         self.imageChildView.activityIndicator.startAnimating()
         self.presenter?.getImages(pag: self.currentPage)
@@ -49,7 +50,6 @@ extension ImageViewController: ImageViewProtocol {
 
 extension ImageViewController: VerticalPaginationManagerDelegate {
     func refreshAll(completion: @escaping (Bool) -> Void) {
-        print("refresh")
         self.currentPage = 1
         self.totalPhotos.removeAll()
         self.imageChildView.imagesToShow.removeAll()
@@ -59,10 +59,20 @@ extension ImageViewController: VerticalPaginationManagerDelegate {
     }
     
     func loadMore(completion: @escaping (Bool) -> Void) {
-        print("##########loadMore")
         self.imageChildView.activityIndicator.startAnimating()
         self.presenter?.getImages(pag: self.currentPage)
         completion(true)
+    }
+}
+
+extension ImageViewController: ImageSelectionDelegate {
+    func imageSelected(photo: PhotoModel) {
+        if let vc = VCFactory.getViewController(.imageDetail) as? ImageDetailViewController {
+            vc.currentPhoto = photo
+            vc.setData(photo: photo)
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+        
     }
     
     

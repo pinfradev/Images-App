@@ -8,6 +8,11 @@
 import Foundation
 import UIKit
 
+enum ButtonDirection {
+    case right
+    case left
+}
+
 extension UIViewController {
     
     func addChildView(view: UIView) {
@@ -21,6 +26,22 @@ extension UIViewController {
 //            let frame = CGRect(x: 0.0, y: 80.0, width: self.view.frame.width, height: self.view.frame.height - 120)
             view.frame = self.view.frame
             self.view.addSubview(view)
+        }
+    }
+    
+    func setNavBar(icon: UIImage?, buttonType: ButtonDirection,target: Any?,
+                   action: Selector?, Color: UIColor = .white,
+                   and title: String = "") {
+        let button = UIBarButtonItem(image: icon, style: .plain, target: target, action: action)
+        switch buttonType {
+         case .left:
+            navigationItem.leftBarButtonItem = button
+            navigationItem.leftBarButtonItem?.tintColor = Color
+            navigationItem.leftBarButtonItem?.title = title
+        default:
+            navigationItem.rightBarButtonItem = button
+            navigationItem.rightBarButtonItem?.tintColor = Color
+            navigationItem.rightBarButtonItem?.title = title
         }
     }
     

@@ -62,9 +62,7 @@ extension VerticalPaginationManager {
     func removeBottomLoader() {
         self.bottomMostLoader?.removeFromSuperview()
         self.bottomMostLoader = nil
-        print("content inset before: \(self.scrollView.contentInset)")
         self.scrollView.contentInset.bottom = .zero
-        print("content inset after: \(self.scrollView.contentInset)")
         self.scrollView.setContentOffset(.zero, animated: true)
     }
     
@@ -143,8 +141,8 @@ extension VerticalPaginationManager {
            let contentHeight = self.scrollView.contentSize.height
            let frameHeight = self.scrollView.bounds.size.height
            let diffY = contentHeight - frameHeight
-           if contentHeight > frameHeight,
-           offsetY > (diffY + 130) && !self.isLoading {
+//           if contentHeight > frameHeight,
+           if  offsetY > (diffY + 130) && !self.isLoading {
             self.scrollView.isScrollEnabled = false
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
                 self.scrollView.isScrollEnabled = true
