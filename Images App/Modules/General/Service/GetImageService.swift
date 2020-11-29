@@ -20,7 +20,6 @@ class GetImageService {
             }
             for document in result!.documents {
                 let documentArray = document.data()
-                print(documentArray)
                 let decoder = JSONDecoder()
                 do {
                     let data = try JSONSerialization.data(withJSONObject: documentArray, options: [])

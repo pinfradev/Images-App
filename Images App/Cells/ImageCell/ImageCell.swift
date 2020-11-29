@@ -16,6 +16,7 @@ class ImageCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         self.roundView(cornerRadius: 15.0)
+        self.imageView.contentMode = .scaleAspectFill
     }
 
     func setImage(urlString: String) {
