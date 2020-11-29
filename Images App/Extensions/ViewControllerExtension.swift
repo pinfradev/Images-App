@@ -23,7 +23,6 @@ extension UIViewController {
             view.frame = frame
             self.view.addSubview(view)
         default:
-//            let frame = CGRect(x: 0.0, y: 80.0, width: self.view.frame.width, height: self.view.frame.height - 120)
             view.frame = self.view.frame
             self.view.addSubview(view)
         }

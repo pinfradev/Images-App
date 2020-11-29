@@ -50,6 +50,7 @@ extension FavoriteViewController: FavoriteDelegate {
             self.totalPhotos.append(contentsOf: favorites)
             self.imageChildView.loadData(photos: favorites)
         } else {
+            self.imageChildView.loadData(photos: favorites)
             self.showAlert(message: "No has agregado favoritos. No te preocupes! Puedes hacerlo en el detalle de cada imagen")
         }
     }

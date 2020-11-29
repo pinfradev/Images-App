@@ -77,8 +77,11 @@ class ImageDetailViewController: UIViewController {
 
 extension ImageDetailViewController: StoreViewProtocol  {
     func deletedImageSucceded(message: String) {
-        self.showAlert(message: message)
-        self.navigationController?.popViewController(animated: true)
+        self.showAlert(message: message, completion: {
+            DispatchQueue.main.async {
+                self.navigationController?.popViewController(animated: true)
+            }
+        })
     }
     
     func deletedImageFailed(error: String) {
