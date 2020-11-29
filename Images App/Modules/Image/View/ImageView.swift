@@ -7,15 +7,31 @@
 
 import UIKit
 
+protocol ImageSelectionDelegate {
+    func imageSelected(photo: PhotoModel)
+}
+
+enum CurrentSection {
+    case photos
+    case favorites
+}
 class ImageView: UIView {
     @IBOutlet weak var collectionView: UICollectionView!
+    
+    @IBOutlet weak var searchBar: UISearchBar!
+    
     
     @IBOutlet weak var titleLabel: UILabel!
     
     @IBOutlet weak var contentView: UIView!
-    
-    var imagesToShow = [PhotoModel]()
+
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
+    var everyImage = [PhotoModel]()
+    var imagesToShow = [PhotoModel]()
+    var delegate: ImageSelectionDelegate?
+    var currentSection: CurrentSection?
+    var filetedImages = [PhotoModel]()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -31,11 +47,19 @@ class ImageView: UIView {
         self.initXib()
         self.addConstraints(contentView: self.contentView)
         self.addSubview(self.contentView)
-        self.titleLabel.text = "Fotos"
-
+        self.searchBar.delegate = self
         self.setupCollection()
     }
     
+    func setupUI(section: CurrentSection) {
+        self.currentSection = section
+        switch section {
+        case .photos:
+            self.titleLabel.text = "Fotos"
+        case .favorites:
+            self.titleLabel.text = "Favoritos"
+        }
+    }
     func setupCollection() {
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
@@ -43,7 +67,8 @@ class ImageView: UIView {
     }
     
     func loadData(photos: [PhotoModel]){
-        self.imagesToShow.append(contentsOf: photos)
+        self.everyImage.append(contentsOf: photos)
+        self.imagesToShow = self.everyImage
         self.collectionView.reloadData()
     }
     
@@ -66,7 +91,43 @@ extension ImageView: UICollectionViewDelegate, UICollectionViewDataSource, UICol
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 150.0, height: 150.0)
+        switch self.currentSection {
+        case .photos:
+            return CGSize(width: 200.0, height: 200.0)
+        default:
+            return CGSize(width: 100.0, height: 100.0)
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if indexPath.row < self.imagesToShow.count{
+            let photo = self.imagesToShow[indexPath.row]
+            delegate?.imageSelected(photo: photo)
+        }
+    }
+}
+
+extension ImageView: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText.isEmpty {
+            self.imagesToShow = self.everyImage
+        } else {
+            self.filetedImages = everyImage.filter { photo in
+                if let name = photo.user?.name, name.contains(searchText) {
+                   return true
+                } else {
+                    return false
+                }
+            }
+            
+            self.imagesToShow = filetedImages
+        }
+        
+        self.collectionView.reloadData()
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
     }
 }
 

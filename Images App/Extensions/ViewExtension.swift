@@ -20,7 +20,7 @@ extension UIView {
         self.addSubview(contentView)
         contentView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            self.topAnchor.constraint(equalTo: contentView.topAnchor),
+            self.safeAreaLayoutGuide.topAnchor.constraint(equalTo: contentView.topAnchor),
             self.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             self.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             self.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
@@ -30,5 +30,10 @@ extension UIView {
     func roundView(cornerRadius: CGFloat) {
         self.clipsToBounds = true
         self.layer.cornerRadius = cornerRadius
+    }
+    
+    func roundView() {
+        self.clipsToBounds = true
+        self.layer.cornerRadius = self.frame.width / 2
     }
 }

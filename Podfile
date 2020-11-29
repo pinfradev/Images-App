@@ -10,4 +10,11 @@ target 'Images App' do
   pod 'Alamofire', '~> 5.2.2'
 # Images cache
   pod 'Kingfisher', '~> 5.15.6'
+# add pods for desired Firebase products
+# https://firebase.google.com/docs/ios/setup#available-pods
+
+pod 'Firebase/Firestore'
+pod 'Firebase/Core'
+pod 'FirebaseFirestoreSwift'
+
 end

@@ -8,10 +8,12 @@
 import Foundation
 
 struct PhotoModel: Codable {
+    var documentId: String?
     var id: String
     var urls: UrlModel?
     var likes: Int?
     var user: UserModel?
+    var description: String?
 }
 
 struct UrlModel: Codable {

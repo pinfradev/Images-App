@@ -15,6 +15,9 @@ struct UserModel: Codable {
     var profileImage: ProfileImage?
     var totalLikes: Int?
     var totalPhotos: Int?
+    var location: String?
+    var totalCollections: Int?
+    var links: Link?
     
     enum CodingKeys: String, CodingKey {
         case id
@@ -24,7 +27,14 @@ struct UserModel: Codable {
         case profileImage = "profile_image"
         case totalLikes = "total_likes"
         case totalPhotos = "total_photos"
+        case location
+        case totalCollections = "total_collections"
+        case links
     }
+}
+
+struct Link: Codable {
+    var html: String?
 }
 
 struct ProfileImage: Codable {

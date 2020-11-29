@@ -12,7 +12,9 @@ class VCFactory: NSObject {
     
     enum AppVC: Int {
         case images
+        case imageDetail
         case favorites
+        case webView
     }
     
     class func getViewController(_ vc: AppVC) -> UIViewController {
@@ -24,7 +26,16 @@ class VCFactory: NSObject {
                 let viewCtrl = self.instantiateVC(id: "\(ImageViewController.self)")
                 let nav = CustomNavigationController(rootViewController: viewCtrl)
                 viewController = nav
+            case .imageDetail:
+                let viewCtrl = self.instantiateVC(id: "\(ImageDetailViewController.self)")
+                viewController = viewCtrl
+            case .webView:
+                let viewCtrl = self.instantiateVC(id: "\(WebViewViewController.self)")
+                viewController = viewCtrl
             case .favorites:
+                let viewCtrl = self.instantiateVC(id: "\(FavoriteViewController.self)")
+                let nav = CustomNavigationController(rootViewController: viewCtrl)
+                viewController = nav
                 break
         }
         
