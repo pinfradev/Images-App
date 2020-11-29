@@ -12,6 +12,7 @@
 		AB4C511D2573C167001A296C /* ImageDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB4C511C2573C167001A296C /* ImageDetailView.xib */; };
 		AB4C51202573C17C001A296C /* ImageDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4C511F2573C17C001A296C /* ImageDetailView.swift */; };
 		AB4C51232573C2F2001A296C /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AB4C51222573C2F2001A296C /* Montserrat-SemiBold.ttf */; };
+		AB51C3D22573F015005EC316 /* WebViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB51C3D12573F015005EC316 /* WebViewViewController.swift */; };
 		AB5668BE2572D06600FD1C54 /* CollectionViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5668BD2572D06600FD1C54 /* CollectionViewExtension.swift */; };
 		AB5668C62572D28C00FD1C54 /* APIBasis.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5668C52572D28C00FD1C54 /* APIBasis.swift */; };
 		AB5668CA2572D2DA00FD1C54 /* RequestType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5668C92572D2DA00FD1C54 /* RequestType.swift */; };
@@ -58,6 +59,7 @@
 		AB4C511C2573C167001A296C /* ImageDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageDetailView.xib; sourceTree = "<group>"; };
 		AB4C511F2573C17C001A296C /* ImageDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailView.swift; sourceTree = "<group>"; };
 		AB4C51222573C2F2001A296C /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
+		AB51C3D12573F015005EC316 /* WebViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewViewController.swift; sourceTree = "<group>"; };
 		AB5668BD2572D06600FD1C54 /* CollectionViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewExtension.swift; sourceTree = "<group>"; };
 		AB5668C52572D28C00FD1C54 /* APIBasis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIBasis.swift; sourceTree = "<group>"; };
 		AB5668C92572D2DA00FD1C54 /* RequestType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestType.swift; sourceTree = "<group>"; };
@@ -135,6 +137,14 @@
 				AB4C511F2573C17C001A296C /* ImageDetailView.swift */,
 			);
 			path = ImageDetail;
+			sourceTree = "<group>";
+		};
+		AB51C3CF2573EEAD005EC316 /* WebView */ = {
+			isa = PBXGroup;
+			children = (
+				AB51C3D12573F015005EC316 /* WebViewViewController.swift */,
+			);
+			path = WebView;
 			sourceTree = "<group>";
 		};
 		AB5668C42572D25000FD1C54 /* Networking */ = {
@@ -250,6 +260,7 @@
 		ABF942072572782F00C99E8A /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				AB51C3CF2573EEAD005EC316 /* WebView */,
 				AB4C511A2573BFFF001A296C /* ImageDetail */,
 				ABF942362572961100C99E8A /* Image */,
 			);
@@ -475,6 +486,7 @@
 				ABF9416825726D8600C99E8A /* AppDelegate.swift in Sources */,
 				AB5668D22572DE4800FD1C54 /* ImageNetworking.swift in Sources */,
 				ABF942572572B66A00C99E8A /* UserModel.swift in Sources */,
+				AB51C3D22573F015005EC316 /* WebViewViewController.swift in Sources */,
 				ABF9424925729F2F00C99E8A /* DeviceExtension.swift in Sources */,
 				AB5668D62572DF9700FD1C54 /* Header.swift in Sources */,
 				ABF942532572B07B00C99E8A /* PhotoModel.swift in Sources */,

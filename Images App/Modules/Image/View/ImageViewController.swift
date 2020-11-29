@@ -26,6 +26,11 @@ class ImageViewController: UIViewController {
         self.paginationManager = VerticalPaginationManager(scrollView: self.imageChildView.collectionView)
         self.paginationManager?.delegate = self
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.isHidden = true
+    }
 
 }
 

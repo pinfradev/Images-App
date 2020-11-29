@@ -18,6 +18,16 @@ class ImageDetailViewController: UIViewController {
         self.setNavBar(icon: #imageLiteral(resourceName: "backIcon"), buttonType: .left, target: self, action: #selector(self.goBack))
         self.navigationController?.navigationBar.backgroundColor = .clear
         self.addChildView(view: imageDetailView)
+        self.imageDetailView.webButton.addTarget(self, action: #selector(self.openWebView), for: .touchUpInside)
+    }
+    
+    @objc func openWebView() {
+        if let vc = VCFactory.getViewController(.webView) as? WebViewViewController {
+            if let url = self.currentPhoto?.user?.links?.html {
+                vc.urlString = url
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+        }
     }
     
     func setData(photo: PhotoModel) {

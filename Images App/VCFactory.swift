@@ -14,6 +14,7 @@ class VCFactory: NSObject {
         case images
         case imageDetail
         case favorites
+        case webView
     }
     
     class func getViewController(_ vc: AppVC) -> UIViewController {
@@ -25,8 +26,11 @@ class VCFactory: NSObject {
                 let viewCtrl = self.instantiateVC(id: "\(ImageViewController.self)")
                 let nav = CustomNavigationController(rootViewController: viewCtrl)
                 viewController = nav
-        case .imageDetail:
+            case .imageDetail:
                 let viewCtrl = self.instantiateVC(id: "\(ImageDetailViewController.self)")
+                viewController = viewCtrl
+            case .webView:
+                let viewCtrl = self.instantiateVC(id: "\(WebViewViewController.self)")
                 viewController = viewCtrl
             case .favorites:
                 break

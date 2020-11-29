@@ -54,6 +54,40 @@
             </objects>
             <point key="canvasLocation" x="2168" y="95"/>
         </scene>
+        <!--Web View View Controller-->
+        <scene sceneID="rGI-JF-7bi">
+            <objects>
+                <viewController storyboardIdentifier="WebViewViewController" id="soQ-97-5sn" customClass="WebViewViewController" customModule="Images_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MRC-e2-s7t">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vB5-p6-CXl">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="raG-IW-wBt"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vB5-p6-CXl" firstAttribute="top" secondItem="raG-IW-wBt" secondAttribute="top" id="QbY-Xj-LH2"/>
+                            <constraint firstItem="vB5-p6-CXl" firstAttribute="leading" secondItem="raG-IW-wBt" secondAttribute="leading" id="WJX-os-jQc"/>
+                            <constraint firstItem="raG-IW-wBt" firstAttribute="bottom" secondItem="vB5-p6-CXl" secondAttribute="bottom" id="adC-1S-uKe"/>
+                            <constraint firstItem="raG-IW-wBt" firstAttribute="trailing" secondItem="vB5-p6-CXl" secondAttribute="trailing" id="sRf-LH-S7n"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="vB5-p6-CXl" id="zdX-Gh-VlH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qHr-zt-K2s" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3258" y="93"/>
+        </scene>
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">
