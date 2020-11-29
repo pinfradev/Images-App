@@ -26,6 +26,7 @@
                 <outlet property="collectionLabel" destination="QZh-o8-shn" id="nkF-9L-7Cj"/>
                 <outlet property="collectionNumberLabel" destination="CXe-T8-KMU" id="1YV-FK-AUV"/>
                 <outlet property="contentView" destination="iN0-l3-epB" id="09U-z8-dIu"/>
+                <outlet property="favoriteButton" destination="P3H-ev-d0f" id="Xhr-zm-iKu"/>
                 <outlet property="likesLabel" destination="LQI-PS-WHW" id="bUM-ac-Sjg"/>
                 <outlet property="likesNumberLabel" destination="woU-Yp-grx" id="s4g-SO-ABg"/>
                 <outlet property="locationButton" destination="NSN-MR-XNO" id="HkP-rg-8jX"/>

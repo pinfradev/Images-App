@@ -33,6 +33,9 @@ class VCFactory: NSObject {
                 let viewCtrl = self.instantiateVC(id: "\(WebViewViewController.self)")
                 viewController = viewCtrl
             case .favorites:
+                let viewCtrl = self.instantiateVC(id: "\(FavoriteViewController.self)")
+                let nav = CustomNavigationController(rootViewController: viewCtrl)
+                viewController = nav
                 break
         }
         

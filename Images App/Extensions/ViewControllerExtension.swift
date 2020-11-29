@@ -45,10 +45,10 @@ extension UIViewController {
         }
     }
     
-    func showAlert(message: String) {
+    func showAlert(message: String, completion: (() -> ())? = nil) {
         let alertController = UIAlertController(title: "", message: message, preferredStyle: .alert)
         let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
         alertController.addAction(action)
-        self.present(alertController, animated: true, completion: nil)
+        self.present(alertController, animated: true, completion: completion)
     }
 }

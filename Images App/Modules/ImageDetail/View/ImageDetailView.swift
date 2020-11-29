@@ -24,6 +24,9 @@ class ImageDetailView: UIView {
     @IBOutlet weak var photoLikesNumber: UILabel!
     @IBOutlet weak var photoDescription: UILabel!
     @IBOutlet var contentView: UIView!
+    @IBOutlet weak var favoriteButton: UIButton!
+    
+    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -47,7 +50,7 @@ class ImageDetailView: UIView {
         self.likesLabel.text = "Likes"
         self.collectionLabel.text = "Colecciones"
         self.photosLabel.text = "Fotos"
-        
+        self.favoriteButton.roundView(cornerRadius: 15.0)
     }
     
     func setInformation(photo: PhotoModel) {

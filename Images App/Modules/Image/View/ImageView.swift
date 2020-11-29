@@ -11,6 +11,10 @@ protocol ImageSelectionDelegate {
     func imageSelected(photo: PhotoModel)
 }
 
+enum CurrentSection {
+    case photos
+    case favorites
+}
 class ImageView: UIView {
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -22,6 +26,7 @@ class ImageView: UIView {
     
     var imagesToShow = [PhotoModel]()
     var delegate: ImageSelectionDelegate?
+    var currentSection: CurrentSection?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -37,11 +42,20 @@ class ImageView: UIView {
         self.initXib()
         self.addConstraints(contentView: self.contentView)
         self.addSubview(self.contentView)
-        self.titleLabel.text = "Fotos"
+        
 
         self.setupCollection()
     }
     
+    func setupUI(section: CurrentSection) {
+        self.currentSection = section
+        switch section {
+        case .photos:
+            self.titleLabel.text = "Fotos"
+        case .favorites:
+            self.titleLabel.text = "Favoritos"
+        }
+    }
     func setupCollection() {
         self.collectionView.delegate = self
         self.collectionView.dataSource = self

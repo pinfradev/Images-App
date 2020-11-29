@@ -19,6 +19,7 @@ class ImageViewController: UIViewController {
         super.viewDidLoad()
         self.navigationController?.navigationBar.isHidden = true
         self.addChildView(view: imageChildView)
+        self.imageChildView.setupUI(section: .photos)
         self.imageChildView.delegate = self
         self.presenter = ImagePresenter(view: self)
         self.imageChildView.activityIndicator.startAnimating()
@@ -75,6 +76,7 @@ extension ImageViewController: ImageSelectionDelegate {
         if let vc = VCFactory.getViewController(.imageDetail) as? ImageDetailViewController {
             vc.currentPhoto = photo
             vc.setData(photo: photo)
+            vc.currentSection = .photos
             self.navigationController?.pushViewController(vc, animated: true)
         }
         
