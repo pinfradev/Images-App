@@ -18,8 +18,10 @@ class ImageDetailViewController: UIViewController {
         super.viewDidLoad()
         self.presenter = StorePresenter(view: self)
         self.navigationController?.navigationBar.isHidden = false
-        self.setNavBar(icon: #imageLiteral(resourceName: "backIcon"), buttonType: .left, target: self, action: #selector(self.goBack))
-        self.navigationController?.navigationBar.backgroundColor = .clear
+        self.view.backgroundColor = UIColor(red: 251/255, green: 251/255, blue: 251/255, alpha: 251/255)
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.setNavBar(icon: UIImage(named: Images.backIcon)?.withRenderingMode(.alwaysOriginal), buttonType: .left, target: self, action: #selector(self.goBack),Color: .black)
         self.addChildView(view: imageDetailView)
         self.imageDetailView.webButton.addTarget(self, action: #selector(self.openWebView), for: .touchUpInside)
         switch self.currentSection {

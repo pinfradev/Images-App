@@ -91,7 +91,12 @@ extension ImageView: UICollectionViewDelegate, UICollectionViewDataSource, UICol
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 100.0, height: 100.0)
+        switch self.currentSection {
+        case .photos:
+            return CGSize(width: 200.0, height: 200.0)
+        default:
+            return CGSize(width: 100.0, height: 100.0)
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

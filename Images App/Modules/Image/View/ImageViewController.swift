@@ -56,9 +56,19 @@ extension ImageViewController: ImageViewProtocol {
 }
 
 extension ImageViewController: VerticalPaginationManagerDelegate {
+    func loadCauseFew(completion: @escaping (Bool) -> Void) {
+        self.currentPage += 1
+        self.imageChildView.activityIndicator.startAnimating()
+        self.presenter?.getImages(pag: self.currentPage)
+        completion(true)
+    }
+    
     func refreshAll(completion: @escaping (Bool) -> Void) {
         self.currentPage = 1
         self.totalPhotos.removeAll()
+        self.imageChildView.everyImage.removeAll()
+        self.imageChildView.imagesToShow.removeAll()
+        self.imageChildView.filetedImages.removeAll()
         self.imageChildView.imagesToShow.removeAll()
         self.imageChildView.activityIndicator.startAnimating()
         self.presenter?.getImages(pag: self.currentPage)
@@ -66,11 +76,12 @@ extension ImageViewController: VerticalPaginationManagerDelegate {
     }
     
     func loadMore(completion: @escaping (Bool) -> Void) {
-        print("########loadmore")
         self.imageChildView.activityIndicator.startAnimating()
         self.presenter?.getImages(pag: self.currentPage)
         completion(true)
     }
+    
+    
 }
 
 extension ImageViewController: ImageSelectionDelegate {

@@ -11,6 +11,7 @@ import UIKit
 protocol VerticalPaginationManagerDelegate: class {
     func refreshAll(completion: @escaping (Bool) -> Void)
     func loadMore(completion: @escaping (Bool) -> Void)
+    func loadCauseFew(completion: @escaping (Bool) -> Void)
 }
 
 class VerticalPaginationManager: NSObject {
@@ -21,6 +22,7 @@ class VerticalPaginationManager: NSObject {
        private var topMostLoader: UIView?
     var refreshViewColor: UIColor = .gray
     var loaderColor: UIColor = .blue
+    var loadedCauseFew = false
     
     weak var delegate: VerticalPaginationManagerDelegate?
     
@@ -144,14 +146,15 @@ extension VerticalPaginationManager {
            if contentHeight > frameHeight,
             offsetY > (diffY + 130) && !self.isLoading {
             self.scrollView.isScrollEnabled = false
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
                 self.scrollView.isScrollEnabled = true
                    self.isLoading = true
                    self.delegate?.loadMore { success in
                        self.isLoading = false
+                    self.loadedCauseFew = false
                    }
                }
-            }
+           } 
 
        }
     
