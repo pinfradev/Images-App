@@ -26,6 +26,7 @@ class ImageViewController: UIViewController {
         self.presenter?.getImages(pag: self.currentPage)
         self.paginationManager = VerticalPaginationManager(scrollView: self.imageChildView.collectionView)
         self.paginationManager?.delegate = self
+        self.hideKeyboardTappedAround()
     }
     
     override func viewWillAppear(_ animated: Bool) {

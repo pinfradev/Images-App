@@ -18,15 +18,20 @@ enum CurrentSection {
 class ImageView: UIView {
     @IBOutlet weak var collectionView: UICollectionView!
     
+    @IBOutlet weak var searchBar: UISearchBar!
+    
+    
     @IBOutlet weak var titleLabel: UILabel!
     
     @IBOutlet weak var contentView: UIView!
 
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
+    var everyImage = [PhotoModel]()
     var imagesToShow = [PhotoModel]()
     var delegate: ImageSelectionDelegate?
     var currentSection: CurrentSection?
+    var filetedImages = [PhotoModel]()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -42,8 +47,7 @@ class ImageView: UIView {
         self.initXib()
         self.addConstraints(contentView: self.contentView)
         self.addSubview(self.contentView)
-        
-
+        self.searchBar.delegate = self
         self.setupCollection()
     }
     
@@ -63,7 +67,8 @@ class ImageView: UIView {
     }
     
     func loadData(photos: [PhotoModel]){
-        self.imagesToShow.append(contentsOf: photos)
+        self.everyImage.append(contentsOf: photos)
+        self.imagesToShow = self.everyImage
         self.collectionView.reloadData()
     }
     
@@ -94,6 +99,25 @@ extension ImageView: UICollectionViewDelegate, UICollectionViewDataSource, UICol
             let photo = self.imagesToShow[indexPath.row]
             delegate?.imageSelected(photo: photo)
         }
+    }
+}
+
+extension ImageView: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        self.filetedImages = everyImage.filter { photo in
+            if let name = photo.user?.name, name.contains(searchText) {
+               return true
+            } else {
+                return false
+            }
+        }
+        
+        self.imagesToShow = filetedImages
+        self.collectionView.reloadData()
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
     }
 }
 

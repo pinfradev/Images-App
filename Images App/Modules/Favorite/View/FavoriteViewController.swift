@@ -15,6 +15,7 @@ class FavoriteViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hideKeyboardTappedAround()
         self.navigationController?.navigationBar.isHidden = true
         self.addChildView(view: imageChildView)
         self.imageChildView.setupUI(section: .favorites)
